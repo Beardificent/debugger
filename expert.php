@@ -51,6 +51,7 @@ newExercise(6);
 //Switched functions around, fixed ; in randomHeroName, fixed implode parameters according to glue and pieces as in documentation.
 //random went to far so put -1 in the randomHeroName, now no errors when loading page.
 // foreach had a missing ampersand
+//REPLACED ALL ECHOES WITH RETURN EXCEPT THE LAST ONE
 
 $arr = [];
 
@@ -77,9 +78,9 @@ function randomHeroName()
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
     $heroes = [$hero_firstnames, $hero_lastnames];
-    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
+    $rand_name = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
 
-    echo $randname;
+    return $rand_name;
 }
 
 
