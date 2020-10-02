@@ -84,3 +84,12 @@ function randomHeroName()
 
 
 echo "Here is the name: " . combineNames();
+
+
+newExercise(7);
+//return changed to echo because it needs to be printed to screen.
+//looked up date, change into an integer with intval (takes the numer from year variable)
+function copyright(int $year) {
+    echo "&copy; $year BeCode";
+}
+copyright(intval(date('Y')));
