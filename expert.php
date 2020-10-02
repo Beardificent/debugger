@@ -46,3 +46,41 @@ for ($letter = 'A'; $letter != 'AA'; $letter++) {
 }
 
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
+
+newExercise(6);
+//Switched functions around, fixed ; in randomHeroName, fixed implode parameters according to glue and pieces as in documentation.
+//random went to far so put -1 in the randomHeroName, now no errors when loading page.
+// foreach had a missing ampersand
+
+$arr = [];
+
+function combineNames($str1 = "", $str2 = "") {
+    $params = [$str1, $str2];
+    foreach($params as &$param) {
+        if ($param == "") {
+            $param = randomHeroName();
+        }
+    }
+    return implode (" - ", $params);
+}
+
+function randomGenerate($arr, $amount) {
+    for ($i = $amount; $i > 0; $i--) {
+        array_push($arr, randomHeroName());
+    }
+
+    return $amount;
+}
+
+function randomHeroName()
+{
+    $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
+    $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
+    $heroes = [$hero_firstnames, $hero_lastnames];
+    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
+
+    echo $randname;
+}
+
+
+echo "Here is the name: " . combineNames();
