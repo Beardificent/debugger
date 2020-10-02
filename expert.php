@@ -12,16 +12,16 @@ function newExercise($x) {
     echo $block;
 
 }
-newExercise(2);
+newExercise(1);
 //INSTEAD OF DEFINING X I USED IT AS A PARAMETER and CALL UPON FUNCTION
-newExercise(3);
+newExercise(2);
 //Arrays start at 0 not at 1
 $week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
 $monday = $week[0];
 
 echo $monday;
 
-newExercise(4);
+newExercise(3);
 // I CHEATED ON THIS ONE BUT IN THE DUMB WAY
 $str = '"Debugged !"';
 echo substr($str, 0, 15);
@@ -30,9 +30,9 @@ echo substr($str, 0, 15);
 $str = 'Debugged ! Also very fun';
 echo substr($str, 0, 10);
 
-newExercise(5);
-
-foreach($week as $day) {
+newExercise(4);
+//foreach
+foreach($week as &$day) {
     $day = substr($day, 0, strlen($day)-3);
 }
 
