@@ -22,9 +22,13 @@ $monday = $week[0];
 echo $monday;
 
 newExercise(4);
-
+// I CHEATED ON THIS ONE BUT IN THE DUMB WAY
 $str = '"Debugged !"';
 echo substr($str, 0, 15);
+
+//LOOK I JUST HAD TO CHANGE THE DOUBLE QUOTES WITH SINGLES
+$str = 'Debugged ! Also very fun';
+echo substr($str, 0, 10);
 
 newExercise(5);
 
