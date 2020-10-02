@@ -50,6 +50,7 @@ print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical arra
 newExercise(6);
 //Switched functions around, fixed ; in randomHeroName, fixed implode parameters according to glue and pieces as in documentation.
 //random went to far so put -1 in the randomHeroName, now no errors when loading page.
+//https://www.php.net/manual/en/function.count.php
 // foreach had a missing ampersand
 //REPLACED ALL ECHOES WITH RETURN EXCEPT THE LAST ONE
 
@@ -136,3 +137,19 @@ isLinkValid('https://google.com');
 isLinkValid('http://google.com');
 //VALID link
 isLinkValid('http://google.com/test.txt');
+
+newExercise(10);
+
+//Filter the array $areTheseFruits to only contain valid fruits
+//do not change the arrays itself
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+//count the array beforehand, also did the -1 just like in prev ex, it counts one to far
+$fruitArr = count($areTheseFruits)-1;
+for($i=0; $i <= $fruitArr; $i++) {
+    if(!in_array($areTheseFruits[$i], $validFruits)) {
+        unset($areTheseFruits[$i]);
+    }
+}
+var_dump($areTheseFruits);//do not change this
