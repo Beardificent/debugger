@@ -96,6 +96,9 @@ function copyright(int $year) {
 copyright(intval(date('Y')));
 
 newExercise(8);
+//switched || (or) with && (and)
+//removed the return 'smith' and added it to the first return
+//added breaklines to put returns beneath each other
 function login(string $email, string $password) {
     if($email == 'john@example.be' && $password == 'pocahontas') {
         return 'Welcome John Smith <br/>';
@@ -111,3 +114,25 @@ echo login('john@example.be', 'dfgidfgdfg');
 //no access
 echo login('wrong@example.be', 'wrong');
 //you can change things again!
+
+newExercise(9);
+//=== and !== compare type and value as shown below: weird thing is that it shows 6 results instead of 4
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) !== false) {
+            echo 'Unacceptable Found<br />';
+
+        }
+    }
+    echo 'Acceptable<br />';
+}
+//invalid link
+isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+isLinkValid('https://google.com');
+//VALID link
+isLinkValid('http://google.com');
+//VALID link
+isLinkValid('http://google.com/test.txt');
