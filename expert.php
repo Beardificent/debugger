@@ -31,9 +31,18 @@ $str = 'Debugged ! Also very fun';
 echo substr($str, 0, 10);
 
 newExercise(4);
-//foreach
+// In order to be able to directly modify array elements within the loop precede $value with &
 foreach($week as &$day) {
     $day = substr($day, 0, strlen($day)-3);
 }
 
 print_r($week);
+
+newExercise(5);
+// OOOF I AM A GENIUS! IT DOESNT WORK WHEN <= THAN Z BECAUSE OF ALL THE VALUES, < DOESNT WORK BECAUSE IT WONT PASS Z, BUT YOU GOTTA STOP IT BEFORE IT SWTITCHES TO AA! BOOYA
+$arr = [];
+for ($letter = 'A'; $letter != 'AA'; $letter++) {
+    array_push($arr, $letter);
+}
+
+print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
