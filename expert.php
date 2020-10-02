@@ -120,7 +120,6 @@ newExercise(9);
 //=== and !== compare type and value as shown below: weird thing is that it shows 6 results instead of 4
 function isLinkValid(string $link) {
     $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
-
     foreach ($unacceptables as $unacceptable) {
         if (strpos($link, $unacceptable) !== false) {
             echo 'Unacceptable Found<br />';
@@ -129,6 +128,7 @@ function isLinkValid(string $link) {
     }
     echo 'Acceptable<br />';
 }
+
 //invalid link
 isLinkValid('http://www.google.com/hack.pdf');
 //invalid link
@@ -145,7 +145,7 @@ newExercise(10);
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
 $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
-//count the array beforehand, also did the -1 just like in prev ex, it counts one to far
+//count the array beforehand (replace array.length), also did the -1 just like in prev ex, it counts one to far
 $fruitArr = count($areTheseFruits)-1;
 for($i=0; $i <= $fruitArr; $i++) {
     if(!in_array($areTheseFruits[$i], $validFruits)) {
